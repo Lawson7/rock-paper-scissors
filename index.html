@@ -76,7 +76,8 @@
 
     function game() {
       while (playerScore < 3 && computerScore < 3) {
-        let playerSelection = prompt('Please enter ROCK, PAPER or SCISSORS').toLowerCase();
+        let playerSelection = prompt('Please enter ROCK, PAPER or SCISSORS').toLowerCase()
+        const computerSelection = computerPlay();
 
         console.log(playRound(playerSelection, computerSelection));
         console.log('Human score: ' + playerScore);
