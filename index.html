@@ -1,20 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html style='text-align:center'>
 
 <head>
   <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="styles.css">
   <title>Rock paper scissors</title>
 </head>
 
-<body style='background-color:gray;'>
+<body>
   <h1>That Old Classic!</h1>
   <h2>Choose your weapon...</h2>
+  <div id="outcome">
+  </div>
   <div class='buttons'>
     <button id='rock'>ROCK</button>
     <button id='paper'>PAPER</button>
     <button id='scissors'>SCISSORS</button>
-  </div>
-  <div id="outcome">
   </div>
   <div id="scoreboard">
     <h3>Best of 5:</h3>
@@ -24,13 +25,13 @@
   let playerScore = 0;
   let computerScore = 0;
 
-
+  // DOM content
 
   const outcome = document.querySelector('#outcome');
   const scoreboard = document.querySelector('#scoreboard');
 
   const result = document.createElement('h1');
-  result.style.color = '#24325b';
+  result.style.color = '#735372';
   result.classList.add('result');
   outcome.appendChild(result);
 
@@ -54,7 +55,7 @@
   humanScore.textContent = 'Your score is: ' + playerScore;
   aiScore.textContent = 'Computer score is: ' + computerScore;
 
-
+  // player selection
 
   const rock = document.querySelector('#rock');
   rock.addEventListener('click', (e) => {
@@ -87,6 +88,7 @@
     }
   }
 
+  // game function
 
   function playRound() {
     let computerSelection = computerPlay();
